@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>ADD A PAGE</h1>
+<form action="/add/submit" method="POST">
+  <div class="form-group">
+    <label for="pageTitle">PAGE TITLE</label>
+    <input type="title" class="form-control" id="pageTitle" name="title">
+    <label for="pageContent">PAGE CONTENT</label>
+    <textarea class="form-control" id="pageContent"rows="20" name="body"></textarea>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}

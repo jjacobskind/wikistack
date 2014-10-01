@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+ 
+{% block title %}Show Page!{% endblock %}
+ 
+{% block content %}
+  <h1>{{docs.title}}</h1>
+  <p>{{docs.body|marked}}</p>
+{% endblock %}
