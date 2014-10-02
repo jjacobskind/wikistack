@@ -9,7 +9,7 @@ body {
 
 header {
 	float:left;
-	background-color:black;
+	background-color:#222;
 	width:100%;
 	margin:0;
 	padding: 0;
@@ -20,7 +20,11 @@ header {
 }
 
 header a {
-	color: #ccc;
+	color: #aaa;
+}
+
+header a:hover {
+	text-decoration: none;
 }
 
 header ul {
@@ -33,12 +37,29 @@ header li {
 	padding: 0 10px;
 }
 
+footer {
+	margin-top:50px;
+}
+
 footer p {
-	color:#ccc;
+	color:#bbb;
 	font-weight:bold;
 }
 
 #container {
 	margin:0;
 	padding:0 50px;
+	float:left;
+	width:100%;
+}
+
+#container ul {
+	clear:left;
+}
+
+
+h1 {
+	margin: 0;
+	padding-top:30px;
+	font-weight:bold;
 }
