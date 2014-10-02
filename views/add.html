@@ -4,9 +4,9 @@
 <form action="/add/submit" method="POST">
   <div class="form-group">
     <label for="pageTitle">PAGE TITLE</label>
-    <input type="title" class="form-control" id="pageTitle" name="title">
+    <input type="title" class="form-control" id="pageTitle" name="title" value="{{doc.title}}">
     <label for="pageContent">PAGE CONTENT</label>
-    <textarea class="form-control" id="pageContent"rows="20" name="body"></textarea>
+    <textarea class="form-control" id="pageContent"rows="20" name="body">{{doc.body}}</textarea>
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
