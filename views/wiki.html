@@ -3,9 +3,9 @@
 {% block title %}Show Page!{% endblock %}
  
 {% block content %}
-  <p>{{docs.body|marked}}</p>
+  <p>{{doc.body|marked}}</p>
   <form method="post" action="/wiki/pageAction">
-  	<input type="hidden" name="url_name" value="{{docs.url_name}}">
+  	<input type="hidden" name="page_id" value="{{doc.id}}">
   	<ul class="button_list">
   		<li>
 		  	<input type="submit" name="submit" value="Edit" class="btn btn-warning">
@@ -14,6 +14,8 @@
 	  		<input type="submit" name="submit" value="Delete" class="btn btn-danger">
 	  	</li>
 	  </ul>
+    {% if multiple %}
+      <p><a href="/list/{{doc.id}}">See Revision History</a></p>
+    {% endif %}
   </form>
-  {{docs.id}}
 {% endblock %}

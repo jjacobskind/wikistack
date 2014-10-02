@@ -13,7 +13,8 @@ var pageSchema = new Schema ({
 	owner_id: String,
 	body: String,
 	date: {type:Date, default: Date.now},
-	status: Number
+	status: Number,
+	versions: []
 });
 
 var userSchema = new Schema ({

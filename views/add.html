@@ -1,13 +1,19 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<form action="/add/submit" method="POST">
-  <div class="form-group">
-    <label for="pageTitle">PAGE TITLE</label>
-    <input type="title" class="form-control" id="pageTitle" name="title" value="{{doc.title}}">
-    <label for="pageContent">PAGE CONTENT</label>
-    <textarea class="form-control" id="pageContent"rows="20" name="body">{{doc.body}}</textarea>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-</form>
+
+{% if edit %}
+	<form action="/add/edit" method="POST">
+		<input type="hidden" name="id" value={{doc.id}}>
+{% else %}
+	<form action="/add/submit" method="POST">
+{% endif %}
+	  <div class="form-group">
+	    <label for="pageTitle">PAGE TITLE</label>
+	    <input type="title" class="form-control" id="pageTitle" name="title" value="{{doc.title}}">
+	    <label for="pageContent">PAGE CONTENT</label>
+	    <textarea class="form-control" id="pageContent"rows="20" name="body">{{doc.body}}</textarea>
+	    <button type="submit" class="btn btn-primary">Submit</button>
+	  </div>
+	</form>
 {% endblock %}

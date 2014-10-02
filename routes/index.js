@@ -11,10 +11,6 @@ router.get('/', function(req, res) {
 	// });
 	models.Page.find({}, function (err, all_pages) {
 		var checkObj = {};
-		var tester = {};
-		if (tester["on"]===undefined)	tester["on"] = "asdf";
-		tester.two = "asdfg";
-		console.log(tester);
 		var objArr = [];
 		all_pages.forEach(function(item) {
 			if(checkObj[item.title]===undefined) {
@@ -22,16 +18,14 @@ router.get('/', function(req, res) {
 			}
 			else {
 				checkObj[item.title].multiple=true;
-				// console.log(checkObj[item.title] + "*********");
 			}
 		});
-		console.log(checkObj);
+
 		for(var obj in checkObj) {
-			// console.log(obj);
-			if(obj.hasOwnProperty("multiple")) {
-				obj.url_name = "disambiguation/" + obj.url_name;
+			if(checkObj[obj].hasOwnProperty("multiple")) {
+				checkObj[obj].url_name = "disambiguation/" + checkObj[obj].url_name;
 			}
-			objArr.push(obj);
+			objArr.push(checkObj[obj]);
 		}
 		res.render('index', { title: 'WikiStack', docs:objArr, headline:"BROWSE MY WIKISTACK" });
 	});

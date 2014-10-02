@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	{% if docs.length > 0 %}
+		<ul id="snippets" class="list_no_bullets">
+			{% for doc in docs %}
+				<li>
+					<h3>{{doc|page_link}}</h3>
+					<p>{{doc.body}}</p>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+	  There are no pages. Why don't you <a href='/add'>add one</a>?
+	{% endif %}
+{% endblock %}
